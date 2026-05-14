@@ -3,241 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HUMAN KEY // ORION TRUST</title>
+    <title>HUMAN KEY // PREMIUM INTERFACE</title>
+    <link href="googleapis.com" rel="stylesheet">
     <style>
-        /* PALETA TACTICĂ MILITARĂ - TERMINAL AMBER/GREEN */
         body {
-            background-color: #040811;
-            color: #00ff66;
-            font-family: 'Courier New', Courier, monospace;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* CONTAINERUL CRIPTOGRAFIC RECONSTRUIT */
-        .orion-frame {
-            width: 100%;
-            max-width: 450px;
-            background: rgba(5, 15, 25, 0.95);
-            border: 2px solid #00ff66;
-            box-shadow: 0 0 30px rgba(0, 255, 102, 0.2);
             padding: 20px;
-            box-sizing: border-box;
-        }
-
-        /* TERMINAL SECURITY HEADER */
-        .security-header {
-            font-size: 10px;
-            border-bottom: 1px dashed #00ff66;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            letter-spacing: 1px;
-        }
-
-        .system-status {
-            color: #00ff66;
-            animation: pulse 2s infinite;
-        }
-
-        /* TITLU CENTRAL PROTOCOL */
-        .project-title {
-            text-align: center;
-            letter-spacing: 4px;
-            font-size: 26px;
-            margin: 10px 0 5px 0;
-            text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
-        }
-
-        .project-subtitle {
-            text-align: center;
-            font-size: 11px;
-            color: #88cfa4;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
-        }
-
-        /* CONTAINER GLOBAL STATS */
-        .global-counter {
-            border: 1px solid #00441b;
-            background: rgba(0, 25, 10, 0.4);
-            padding: 8px;
-            text-align: center;
-            font-size: 11px;
-            margin-bottom: 25px;
-        }
-
-        /* PANOU INTEGRITATE ȘI RECOMPENSĂ EXCLUSIVĂ */
-        .integrity-box {
-            border: 1px solid #00ff66;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 25px;
-            position: relative;
-            background: rgba(0, 10, 5, 0.3);
-        }
-
-        .reward-title {
-            font-size: 11px;
-            letter-spacing: 1px;
-            color: #88cfa4;
-        }
-
-        .crypto-balance {
-            font-size: 38px;
-            font-weight: bold;
-            margin: 10px 0;
-            text-shadow: 0 0 15px rgba(0, 255, 102, 0.7);
-        }
-
-        .hardware-badge {
-            font-size: 10px;
-            color: #00ff66;
-            letter-spacing: 1px;
-        }
-
-        /* BUTOANE MILITARE TACTICE (FĂRĂ COLȚURI ROTUNJITE) */
-        .cyber-button {
-            width: 100%;
-            background: transparent;
-            border: 2px solid #00ff66;
-            color: #00ff66;
-            padding: 16px;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            cursor: pointer;
-            margin-bottom: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 12px;
-            transition: all 0.2s ease;
+            min-height: 100vh;
         }
 
-        .cyber-button:hover {
-            background: #00ff66;
-            color: #040811;
-            box-shadow: 0 0 20px #00ff66;
-        }
-
-        /* ANIMAȚIA CHEII SPECIALE SECRETE */
-        .spinning-key {
-            font-size: 16px;
-            display: inline-block;
-            animation: tacticalSpin 4s linear infinite;
-        }
-
-        /* EFECT TACTIC DE VEDERE NOCTURNĂ/RADAR PE HARTĂ */
-        .map-wrapper {
-            border: 2px solid #00ff66;
-            margin: 20px 0;
-            position: relative;
-            /* Inversăm culorile hărții clasice pentru a crea un ecran radar militar verde */
-            filter: grayscale(100%) invert(90%) sepia(100%) hue-rotate(85deg) saturate(250%);
-            opacity: 0.85;
-        }
-
-        .map-iframe {
+        .main-container {
             width: 100%;
-            height: 180px;
-            border: none;
-            display: block;
+            max-width: 440px;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+            padding: 24px;
+            box-sizing: border-box;
         }
 
-        /* CONSOLĂ LOGURI VALIDARE ATENTĂ */
-        .log-section {
-            margin-top: 25px;
-            font-size: 11px;
-        }
-
-        .log-row {
+        .status-bar {
             display: flex;
             justify-content: space-between;
-            padding: 6px 0;
-            border-bottom: 1px solid #003311;
-            color: #88cfa4;
+            align-items: center;
+            background: #1f2937;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 12px;
+            color: #9ca3af;
+            margin-bottom: 24px;
         }
 
-        /* ANIMAȚII CONSOLE SYSTEM */
-        @keyframes tacticalSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 6px;
+            box-shadow: 0 0 8px #10b981;
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
+
+        .brand-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            text-align: center;
+            color: #ffffff;
+            letter-spacing: 2px;
+            margin: 0 0 6px 0;
+        }
+
+        .brand-subtitle {
+            font-size: 13px;
+            color: #9ca3af;
+            text-align: center;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .counter-badge {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .reward-card {
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .reward-label {
+            font-size: 11px;
+            color: #9ca3af;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        .balance-display {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #10b981;
+            margin: 10px 0;
+        }
+
+        .attestation-text {
+            font-size: 11px;
+            color: #9ca3af;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .action-button {
+            width: 100%;
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 12px;
+            transition: background 0.2s ease;
+        }
+
+        .action-button:hover {
+            background: #1d4ed8;
+        }
+
+        .action-button.secondary {
+            background: #374151;
+            color: #f3f4f6;
+            border: 1px solid #4b5563;
+        }
+
+        .action-button.secondary:hover {
+            background: #4b5563;
+        }
+
+        .map-box {
+            border: 1px solid #374151;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 24px 0;
+            height: 180px;
+            background: #1f2937;
+        }
+
+        .map-element {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .log-container {
+            margin-top: 24px;
+        }
+
+        .log-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #9ca3af;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .log-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #1f2937;
+            font-size: 12px;
+            font-family: 'Share Tech Mono', monospace;
         }
     </style>
 </head>
 <body>
 
-    <div class="orion-frame">
-        <!-- HEADER DE DETECTARE REȚEA -->
-        <div class="security-header">
-            <div>SYS_LOG: <span class="system-status">SECURE_RUNNING</span></div>
-            <div>OPERATOR: EONIK // 0x44B...1C631</div>
+    <div class="main-container">
+        <div class="status-bar">
+            <div><span class="status-dot"></span>SYSTEM: ACTIVE</div>
+            <div>OP_ID: 0x44B...1C6</div>
         </div>
 
-        <!-- ID-UL PRINCIPAL AL INTERFEȚEI -->
-        <div class="project-title">HUMAN KEY</div>
-        <div class="project-subtitle">Orion Trust // Financial Security Digital Identification</div>
+        <div class="brand-title">HUMAN KEY</div>
+        <div class="brand-subtitle">Sovereign Identity Reward Network</div>
 
-        <!-- COUNTER GLOBAL COMPACT -->
-        <div class="global-counter">
-            ● GLOBAL TODAY <span style="color: #ffffff; font-weight: bold;">47,722</span> sessions authenticated
+        <div class="counter-badge">
+            Sesiuni verificate astăzi global: 47,722
         </div>
 
-        <!-- SECȚIUNEA INTERFATA BALANȚĂ -->
-        <div class="integrity-box">
-            <div class="reward-title">INTEGRITY REWARD (USD)</div>
-            <div class="crypto-balance">1.10</div>
-            <div class="hardware-badge">■ Hardware Attestation: ACTIVE</div>
+        <div class="reward-card">
+            <div class="reward-label">BALANȚĂ RECOMPENSĂ (USD)</div>
+            <div class="balance-display">1.10</div>
+            <div class="attestation-text">Hardware Enclave: Certificat</div>
         </div>
 
-        <!-- BUTON CRIPTOGRAFIC CU CHEIȚA ROTATIVĂ -->
-        <button class="cyber-button" onclick="triggerAuth()">
-            <span class="spinning-key">🔑</span> AUTHENTICATE SESSION
+        <button class="action-button" onclick="alert('Inițiere sesiune autentificare...')">
+            AUTHENTICATE SESSION
         </button>
 
-        <button class="cyber-button" onclick="triggerConvert()">
+        <button class="action-button secondary" onclick="alert('Conversie fonduri către portofel...')">
             CONVERT TO CASH
         </button>
 
-        <!-- HARTĂ MATRICE TITAN - PIAȚA TRAPEZULUI -->
-        <div class="map-wrapper">
-            <!-- Embedding OpenStreetMap centrat exact pe coordonatele din Piața Trapezului (Strada Prevederii) -->
-            <iframe class="map-iframe" src="https://openstreetmap.org"></iframe>
-        </div>
-        <div style="font-size: 9px; text-align: center; color: #00441b; margin-top: -15px; margin-bottom: 20px;">
-            Hardware-Backed Privacy via Secure Enclave Encryption
+        <div class="map-box">
+            <iframe class="map-element" src="https://openstreetmap.org"></iframe>
         </div>
 
-        <!-- SECȚIUNE LOGURI COPIATĂ DUPĂ SCRRENSHOT-UL TĂU -->
-        <div class="log-section">
-            <div style="font-weight: bold; margin-bottom: 5px; color: #00ff66;">VALIDATION LOG</div>
-            <div class="log-row">
-                <div>Biometric Validation (23:39)</div>
-                <div style="color: #00ff66;">+$0.02</div>
-            </div>
-            <div class="log-row">
-                <div>Biometric Validation (09:50)</div>
-                <div style="color: #00ff66;">+$0.02</div>
+        <div class="log-container">
+            <div class="log-title">LOGURI ACTIVITATE RECENȚI</div>
+            <div class="log-item">
+                <div style="color: #9ca3af;">Validare Biometrică [Titan]</div>
+                <div style="color: #10b981;">+$0.02</div>
             </div>
         </div>
     </div>
 
-    <script>
-        function triggerAuth() {
-            alert("SYS_MSG: Inițiere scanare biometrică prin Enclava Securizată Orion...");
-        }
-        function triggerConvert() {
-            alert("SYS_MSG: Se procesează conversia fondurilor către portofelul Web3 0x44B...1C631...");
-        }
-    </script>
 </body>
 </html>
