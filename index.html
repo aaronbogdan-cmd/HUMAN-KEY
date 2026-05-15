@@ -1,222 +1,223 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HUMAN KEY // PREMIUM INTERFACE</title>
-    <link href="googleapis.com" rel="stylesheet">
+    <title>ORION TRUST // OFFICIAL SPLASH SCREEN</title>
+    <!-- IMPORTĂM OFICIAL MONTSERRAT ȘI INTER DIN TEXTUL PUR GOOGLE FONTS -->
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #0b0f19;
-            color: #f3f4f6;
-            font-family: 'Inter', sans-serif;
+            background-color: #050f26; /* Albastru cosmic premium reîncărcat, mai deschis */
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-        }
-
-        .main-container {
-            width: 100%;
-            max-width: 440px;
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 16px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
-            padding: 24px;
-            box-sizing: border-box;
-        }
-
-        .status-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #1f2937;
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-family: 'Share Tech Mono', monospace;
-            font-size: 12px;
-            color: #9ca3af;
-            margin-bottom: 24px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #10b981;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 6px;
-            box-shadow: 0 0 8px #10b981;
-        }
-
-        .brand-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 26px;
-            font-weight: 700;
-            text-align: center;
-            color: #ffffff;
-            letter-spacing: 2px;
-            margin: 0 0 6px 0;
-        }
-
-        .brand-subtitle {
-            font-size: 13px;
-            color: #9ca3af;
-            text-align: center;
-            margin-bottom: 24px;
-            letter-spacing: 0.5px;
-        }
-
-        .counter-badge {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            color: #10b981;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-
-        .reward-card {
-            background: #1f2937;
-            border: 1px solid #374151;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .reward-label {
-            font-size: 11px;
-            color: #9ca3af;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-        }
-
-        .balance-display {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 40px;
-            font-weight: 700;
-            color: #10b981;
-            margin: 10px 0;
-        }
-
-        .attestation-text {
-            font-size: 11px;
-            color: #9ca3af;
-            font-family: 'Share Tech Mono', monospace;
-        }
-
-        .action-button {
-            width: 100%;
-            background: #2563eb;
-            color: #ffffff;
-            border: none;
-            padding: 15px;
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            font-weight: 600;
-            border-radius: 10px;
-            cursor: pointer;
-            margin-bottom: 12px;
-            transition: background 0.2s ease;
-        }
-
-        .action-button:hover {
-            background: #1d4ed8;
-        }
-
-        .action-button.secondary {
-            background: #374151;
-            color: #f3f4f6;
-            border: 1px solid #4b5563;
-        }
-
-        .action-button.secondary:hover {
-            background: #4b5563;
-        }
-
-        .map-box {
-            border: 1px solid #374151;
-            border-radius: 12px;
             overflow: hidden;
-            margin: 24px 0;
-            height: 180px;
-            background: #1f2937;
         }
 
-        .map-element {
+        /* CONTAINER 100% COMPATIBIL ȘI FLUID PENTRU ORICE TELEFON SMART */
+        .orion-splash-container {
+            width: 100vw;
+            height: 100vh;
+            max-width: 440px;
+            /* Gradient radial care dă reflexia de adâncime a cristalelor */
+            background: radial-gradient(circle at center, #0c2046 0%, #040a1c 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 24px;
+            position: relative;
+            /* ANIMAȚIA GENERALĂ AUTOMATĂ DE FADE-OUT LA SECUNDA 3.5 */
+            animation: globalFadeOut 0.8s ease-in-out 3.5s forwards;
+        }
+
+        /* LOGO-UL CENTRAL DE 3CM CU AMPRENTĂ ȘI CONTUR ORBITAR */
+        .logo-system-wrapper {
+            width: 220px; /* Lățime optimă pentru afișarea amprentei de 3cm */
+            height: 220px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        /* REGLAJ DETALIU: CONTUR ALB DISCRET CU EFECT FADE */
+        .orion-stroke-orbit {
+            position: absolute;
             width: 100%;
             height: 100%;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.25); /* Stroke fin alb cu fade */
+            border-radius: 50%;
+            pointer-events: none;
         }
 
-        .log-container {
-            margin-top: 24px;
+        /* REGLAJ DETALIU: LUMINIȚA CE FACE UN TUR COMPLET ÎN 3.5 SECUNDE */
+        .light-orbit-tracer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: tracerOrbit 3.5s linear infinite;
         }
 
-        .log-title {
+        /* Micul punct luminos de neon cyan */
+        .light-orbit-tracer::before {
+            content: '';
+            position: absolute;
+            top: -5px; /* Aliniat perfect pe linia de stroke */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: #0ea5e9;
+            border-radius: 50%;
+            box-shadow: 0 0 14px #0ea5e9, 0 0 6px #ffffff;
+        }
+
+        /* GLOWING EXCLUSIV DOAR PE AMPRENTĂ (NICIODATĂ PE TEXT) */
+        .biometric-fingerprint-core {
+            width: 75%;
+            height: 75%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://w3.org" viewBox="0 0 100 100" fill="none" stroke="%230ea5e9" stroke-width="1.6" stroke-linecap="round"><path d="M50,20 C35,20 25,35 25,50 M50,10 C30,10 15,30 15,50 M50,30 C40,30 35,40 35,50 M50,40 C45,40 43,45 43,50 M50,5 M50,15 M50,25 M50,35 M50,45 M50,55 M50,65 M50,75 M50,85 M50,95 M57,50 C57,45 55,40 50,40 M65,50 C65,40 60,30 50,30 M75,50 C75,30 70,10 50,10 M85,50 C85,25 78,5 50,5 M43,50 C43,55 45,60 50,60 C55,60 57,55 57,50 M35,50 C35,60 40,70 50,70 C60,70 65,60 65,50 M25,50 C25,65 33,80 50,80 C67,80 75,65 75,50 M15,50 C15,70 27,90 50,90 C73,90 85,70 85,50"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: drop-shadow(0 0 14px rgba(14, 165, 233, 0.75)); /* Glowing discret neon cyan */
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ANIMAȚIA LENTĂ ȘI FLUIDĂ A STELELOR DIN CONSTELAȚIE */
+        .constellation-stars-system {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .orion-golden-star {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background: #ffffff;
+            border-radius: 50%;
+            /* Respirația cosmică lentă stabilită */
+            animation: cosmicBreathAnimation 2.8s ease-in-out infinite alternate;
+        }
+
+        /* TYPOGRAPHY INTEGRAL ÎN LIMBA ENGLEZĂ (ALB MAT, FĂRĂ GLOW) */
+        .orion-typography-section {
+            text-align: center;
+            width: 100%;
+            z-index: 5;
+        }
+
+        /* TEXT PRINCIPAL: ORION TRUST (MONTSERRAT, GEOMETRIC, MAJUSCULE) */
+        .orion-brand-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #ffffff; /* Alb mat curat */
+            margin: 0 0 10px 0;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        /* SUBTITLU LIZIBIL ȘI FIN (INTER, SUBȚIRE, ÎNALȚ) */
+        .orion-brand-subtitle {
+            font-family: 'Inter', sans-serif;
             font-size: 12px;
-            font-weight: 600;
-            color: #9ca3af;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
+            font-weight: 300;
+            color: #d1d5db; /* Alb mat secundar */
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            line-height: 1.6;
         }
 
-        .log-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid #1f2937;
-            font-size: 12px;
-            font-family: 'Share Tech Mono', monospace;
+        /* TIMING-UL JOCULUI DE LUMINĂ PENTRU STELE (RESPIRAȚIE LENTĂ) */
+        @keyframes cosmicBreathAnimation {
+            0% {
+                transform: scale(0.85);
+                opacity: 0.4;
+                box-shadow: 0 0 5px #f59e0b;
+            }
+            100% {
+                transform: scale(1.15);
+                opacity: 1;
+                box-shadow: 0 0 14px #f59e0b, 0 0 5px #ffffff;
+            }
+        }
+
+        /* TIMING-UL TRASORULUI: EXACT UN TUR COMPLET ÎN 3.5 SECUNDE (360 GRADE) */
+        @keyframes tracerOrbit {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* TIMING-UL OBLIGATORIU PENTRU FADE-OUT */
+        @keyframes globalFadeOut {
+            0% {
+                opacity: 1;
+                visibility: visible;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <div class="status-bar">
-            <div><span class="status-dot"></span>SYSTEM: ACTIVE</div>
-            <div>OP_ID: 0x44B...1C6</div>
-        </div>
-
-        <div class="brand-title">HUMAN KEY</div>
-        <div class="brand-subtitle">Sovereign Identity Reward Network</div>
-
-        <div class="counter-badge">
-            Sesiuni verificate astăzi global: 47,722
-        </div>
-
-        <div class="reward-card">
-            <div class="reward-label">BALANȚĂ RECOMPENSĂ (USD)</div>
-            <div class="balance-display">1.10</div>
-            <div class="attestation-text">Hardware Enclave: Certificat</div>
-        </div>
-
-        <button class="action-button" onclick="alert('Inițiere sesiune autentificare...')">
-            AUTHENTICATE SESSION
-        </button>
-
-        <button class="action-button secondary" onclick="alert('Conversie fonduri către portofel...')">
-            CONVERT TO CASH
-        </button>
-
-        <div class="map-box">
-            <iframe class="map-element" src="https://openstreetmap.org"></iframe>
-        </div>
-
-        <div class="log-container">
-            <div class="log-title">LOGURI ACTIVITATE RECENȚI</div>
-            <div class="log-item">
-                <div style="color: #9ca3af;">Validare Biometrică [Titan]</div>
-                <div style="color: #10b981;">+$0.02</div>
+    <div class="orion-splash-container">
+        
+        <!-- ELEMENTUL INTEGRAT CU LOGO, STROKE, GLOW ȘI TRASOR LUMINOS -->
+        <div class="logo-system-wrapper">
+            <!-- Cercul fin alb cu fade -->
+            <div class="orion-stroke-orbit"></div>
+            
+            <!-- Trasorul luminos cu mișcare sincronizată -->
+            <div class="light-orbit-tracer"></div>
+            
+            <!-- Amprenta cu glowing discret neon cyan -->
+            <div class="biometric-fingerprint-core"></div>
+            
+            <!-- Stelele aurii ale constelației care pulsează lent -->
+            <div class="constellation-stars-system">
+                <div class="orion-golden-star" style="top: 30%; left: 48%; animation-delay: 0s;"></div>
+                <div class="orion-golden-star" style="top: 42%; left: 36%; animation-delay: 0.4s;"></div>
+                <div class="orion-golden-star" style="top: 46%; left: 60%; animation-delay: 0.2s;"></div>
+                <div class="orion-golden-star" style="top: 54%; left: 46%; animation-delay: 0.6s;"></div>
+                <div class="orion-golden-star" style="top: 58%; left: 54%; animation-delay: 0.1s;"></div>
+                <div class="orion-golden-star" style="top: 68%; left: 40%; animation-delay: 0.5s;"></div>
+                <div class="orion-golden-star" style="top: 72%; left: 58%; animation-delay: 0.3s;"></div>
             </div>
+        </div>
+
+        <!-- COD TYpography CURAT, ALB ȘI MAT ÎN LIMBA ENGLEZĂ -->
+        <div class="orion-typography-section">
+            <h1 class="orion-brand-title">Orion Trust</h1>
+            <p class="orion-brand-subtitle">Financial Security<br>Digital Identification</p>
         </div>
     </div>
 
