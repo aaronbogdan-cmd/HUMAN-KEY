@@ -12,7 +12,7 @@
         }
 
         body {
-            background-color: #050f26; /* Albastru cosmic premium reîncărcat, mai deschis */
+            background-color: #040d21; /* Albastru cosmic intens reîncărcat */
             margin: 0;
             padding: 0;
             display: flex;
@@ -22,45 +22,59 @@
             overflow: hidden;
         }
 
-        /* CONTAINER 100% COMPATIBIL ȘI FLUID PENTRU ORICE TELEFON SMART */
+        /* CONTAINER 100% FLUID PENTRU TELEFOANE SMART - COMPATIBILITATE MAXIMĂ */
         .orion-splash-container {
             width: 100vw;
             height: 100vh;
             max-width: 440px;
-            /* Gradient radial care dă reflexia de adâncime a cristalelor */
-            background: radial-gradient(circle at center, #0c2046 0%, #040a1c 100%);
+            /* Gradient complex ce redă reflexia de adâncime a cristalelor cosmice */
+            background: radial-gradient(circle at 80% 20%, #0d2552 0%, #06132d 40%, #030814 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px 24px;
+            padding: 40px 30px;
             position: relative;
             /* ANIMAȚIA GENERALĂ AUTOMATĂ DE FADE-OUT LA SECUNDA 3.5 */
             animation: globalFadeOut 0.8s ease-in-out 3.5s forwards;
         }
 
-        /* LOGO-UL CENTRAL DE 3CM CU AMPRENTĂ ȘI CONTUR ORBITAR */
+        /* TEXTURĂ DISCRETĂ PENTRU REFLEXIILE DE GHEAȚĂ DIGITALĂ */
+        .crystal-reflection-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* CONTAINERUL LOGO-ULUI CENTRAL - AMPRENTA REALA DE 3CM ȘI ORBITA */
         .logo-system-wrapper {
-            width: 220px; /* Lățime optimă pentru afișarea amprentei de 3cm */
-            height: 220px;
+            width: 240px; /* Dimensiune optimă pentru amprenta impunătoare de 3cm */
+            height: 240px;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
+            z-index: 2;
         }
 
-        /* REGLAJ DETALIU: CONTUR ALB DISCRET CU EFECT FADE */
+        /* REGLAJ DETALIU: CONTUR ALB DISCRET (STROKE FIN CU FADE) */
         .orion-stroke-orbit {
             position: absolute;
             width: 100%;
             height: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.25); /* Stroke fin alb cu fade */
+            border: 1px solid rgba(255, 255, 255, 0.22); /* Stroke fin alb cu opacitate redusă */
             border-radius: 50%;
             pointer-events: none;
+            z-index: 2;
         }
 
-        /* REGLAJ DETALIU: LUMINIȚA CE FACE UN TUR COMPLET ÎN 3.5 SECUNDE */
+        /* REGLAJ DETALIU: LUMINIȚA CE FACE UN TUR COMPLET ÎN 3.5 SECUNDE (TRASOR) */
         .light-orbit-tracer {
             position: absolute;
             width: 100%;
@@ -69,83 +83,99 @@
             left: 0;
             border-radius: 50%;
             pointer-events: none;
+            z-index: 3;
             animation: tracerOrbit 3.5s linear infinite;
         }
 
-        /* Micul punct luminos de neon cyan */
+        /* Punctul luminos intens neon cyan de pe orbită */
         .light-orbit-tracer::before {
             content: '';
             position: absolute;
-            top: -5px; /* Aliniat perfect pe linia de stroke */
+            top: -5px;
             left: 50%;
             transform: translateX(-50%);
             width: 10px;
             height: 10px;
             background: #0ea5e9;
             border-radius: 50%;
-            box-shadow: 0 0 14px #0ea5e9, 0 0 6px #ffffff;
+            box-shadow: 0 0 16px #0ea5e9, 0 0 6px #ffffff;
         }
 
-        /* GLOWING EXCLUSIV DOAR PE AMPRENTĂ (NICIODATĂ PE TEXT) */
-        .biometric-fingerprint-core {
-            width: 75%;
-            height: 75%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://w3.org" viewBox="0 0 100 100" fill="none" stroke="%230ea5e9" stroke-width="1.6" stroke-linecap="round"><path d="M50,20 C35,20 25,35 25,50 M50,10 C30,10 15,30 15,50 M50,30 C40,30 35,40 35,50 M50,40 C45,40 43,45 43,50 M50,5 M50,15 M50,25 M50,35 M50,45 M50,55 M50,65 M50,75 M50,85 M50,95 M57,50 C57,45 55,40 50,40 M65,50 C65,40 60,30 50,30 M75,50 C75,30 70,10 50,10 M85,50 C85,25 78,5 50,5 M43,50 C43,55 45,60 50,60 C55,60 57,55 57,50 M35,50 C35,60 40,70 50,70 C60,70 65,60 65,50 M25,50 C25,65 33,80 50,80 C67,80 75,65 75,50 M15,50 C15,70 27,90 50,90 C73,90 85,70 85,50"/></svg>');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            filter: drop-shadow(0 0 14px rgba(14, 165, 233, 0.75)); /* Glowing discret neon cyan */
+        /* GRAFICA DIRECTĂ A AMPRENTEI (INLINE VECTORIAL - AFISARE GARANTATA 100%) */
+        .fingerprint-vector-core {
+            width: 70%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* GLOWING DISCRET EXCLUSIV PE LINIILE AMPRENTEI */
+            filter: drop-shadow(0 0 16px rgba(14, 165, 233, 0.85));
             position: relative;
-            z-index: 2;
+            z-index: 4;
         }
 
-        /* ANIMAȚIA LENTĂ ȘI FLUIDĂ A STELELOR DIN CONSTELAȚIE */
+        .fingerprint-vector-core svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* LINIILE ȘI STELELE CONSTELAȚIEI ORION INTERCONECTATE REAL */
         .constellation-stars-system {
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        /* Liniile vectoriale fine dintre stelele aurii */
+        .constellation-lines {
             position: absolute;
             width: 100%;
             height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 3;
-            pointer-events: none;
+            stroke: rgba(245, 158, 11, 0.35);
+            stroke-width: 1;
+            stroke-dasharray: 2;
         }
 
         .orion-golden-star {
             position: absolute;
-            width: 7px;
-            height: 7px;
+            width: 8px;
+            height: 8px;
             background: #ffffff;
             border-radius: 50%;
             /* Respirația cosmică lentă stabilită */
             animation: cosmicBreathAnimation 2.8s ease-in-out infinite alternate;
         }
 
-        /* TYPOGRAPHY INTEGRAL ÎN LIMBA ENGLEZĂ (ALB MAT, FĂRĂ GLOW) */
+        /* TYPOGRAPHY INTEGRAL ÎN LIMBA ENGLEZĂ (ALB MAT, MARIT, FĂRĂ GLOW) */
         .orion-typography-section {
             text-align: center;
             width: 100%;
-            z-index: 5;
+            z-index: 6;
         }
 
-        /* TEXT PRINCIPAL: ORION TRUST (MONTSERRAT, GEOMETRIC, MAJUSCULE) */
+        /* CORECTURĂ PROPORȚII TEXT: ORION TRUST (MONTSERRAT, MAJUSCULE, MARE, AERISIT) */
         .orion-brand-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 30px;
-            font-weight: 700;
+            font-size: 34px; /* Mărit substanțial pentru vizibilitate de elită */
+            font-weight: 800;
             color: #ffffff; /* Alb mat curat */
-            margin: 0 0 10px 0;
-            letter-spacing: 5px;
+            margin: 0 0 14px 0;
+            letter-spacing: 6px;
             text-transform: uppercase;
         }
 
-        /* SUBTITLU LIZIBIL ȘI FIN (INTER, SUBȚIRE, ÎNALȚ) */
+        /* CORECTURĂ PROPORȚII TEXT: SUBTITLUL (INTER, CLAR, ULTRA-LIZIBIL) */
         .orion-brand-subtitle {
             font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            font-weight: 300;
+            font-size: 14px; /* Mărit pentru a elimina aspectul liliputan */
+            font-weight: 400;
             color: #d1d5db; /* Alb mat secundar */
             margin: 0;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             line-height: 1.6;
         }
@@ -153,28 +183,24 @@
         /* TIMING-UL JOCULUI DE LUMINĂ PENTRU STELE (RESPIRAȚIE LENTĂ) */
         @keyframes cosmicBreathAnimation {
             0% {
-                transform: scale(0.85);
+                transform: scale(0.8);
                 opacity: 0.4;
-                box-shadow: 0 0 5px #f59e0b;
+                box-shadow: 0 0 6px #f59e0b;
             }
             100% {
-                transform: scale(1.15);
+                transform: scale(1.2);
                 opacity: 1;
-                box-shadow: 0 0 14px #f59e0b, 0 0 5px #ffffff;
+                box-shadow: 0 0 16px #f59e0b, 0 0 6px #ffffff;
             }
         }
 
-        /* TIMING-UL TRASORULUI: EXACT UN TUR COMPLET ÎN 3.5 SECUNDE (360 GRADE) */
+        /* TIMING-UL TRASORULUI: EXACT UN TUR COMPLET ÎN 3.5 SECUNDE */
         @keyframes tracerOrbit {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        /* TIMING-UL OBLIGATORIU PENTRU FADE-OUT */
+        /* TIMING-UL OBLIGATORIU PENTRU FADE-OUT GENERAL */
         @keyframes globalFadeOut {
             0% {
                 opacity: 1;
@@ -190,31 +216,54 @@
 <body>
 
     <div class="orion-splash-container">
+        <div class="crystal-reflection-overlay"></div>
         
-        <!-- ELEMENTUL INTEGRAT CU LOGO, STROKE, GLOW ȘI TRASOR LUMINOS -->
+        <!-- WRAPPER LOGO: AMPRENTĂ RECONSTRUITĂ, STROKE, GLOW ȘI TRASOR -->
         <div class="logo-system-wrapper">
             <!-- Cercul fin alb cu fade -->
             <div class="orion-stroke-orbit"></div>
             
-            <!-- Trasorul luminos cu mișcare sincronizată -->
+            <!-- Trasorul luminos cu mișcare de 3.5 secunde -->
             <div class="light-orbit-tracer"></div>
             
-            <!-- Amprenta cu glowing discret neon cyan -->
-            <div class="biometric-fingerprint-core"></div>
+            <!-- Amprenta reală redată vectorial (Garanție de afișare) -->
+            <div class="fingerprint-vector-core">
+                <svg viewBox="0 0 100 100" fill="none" stroke="#0ea5e9" stroke-width="1.8" stroke-linecap="round">
+                    <path d="M50,15 C32,15 20,28 20,45 C20,48 21,52 22,55" />
+                    <path d="M50,5 C25,5 10,22 10,45 C10,55 14,65 20,72" />
+                    <path d="M50,25 C38,25 30,33 30,45 C30,52 34,58 40,62" />
+                    <path d="M50,35 C44,35 40,39 40,45 C40,47 42,50 45,52" />
+                    <path d="M50,5 L50,95" stroke-dasharray="1 3" />
+                    <path d="M55,45 C55,39 51,35 50,35" />
+                    <path d="M60,45 C60,33 52,25 50,25" />
+                    <path d="M70,45 C70,22 55,5 50,5" />
+                    <path d="M80,45 C80,15 65,0 50,0" />
+                    <path d="M45,52 C48,54 50,55 53,55 C58,55 60,51 60,45" />
+                    <path d="M40,62 C45,66 55,66 60,62 C67,58 70,52 70,45" />
+                    <path d="M30,72 C40,80 60,80 70,72 C77,65 80,55 80,45" />
+                </svg>
+            </div>
             
-            <!-- Stelele aurii ale constelației care pulsează lent -->
+            <!-- Liniile fine și stelele aurii ale constelației Orion -->
             <div class="constellation-stars-system">
-                <div class="orion-golden-star" style="top: 30%; left: 48%; animation-delay: 0s;"></div>
-                <div class="orion-golden-star" style="top: 42%; left: 36%; animation-delay: 0.4s;"></div>
-                <div class="orion-golden-star" style="top: 46%; left: 60%; animation-delay: 0.2s;"></div>
-                <div class="orion-golden-star" style="top: 54%; left: 46%; animation-delay: 0.6s;"></div>
-                <div class="orion-golden-star" style="top: 58%; left: 54%; animation-delay: 0.1s;"></div>
-                <div class="orion-golden-star" style="top: 68%; left: 40%; animation-delay: 0.5s;"></div>
-                <div class="orion-golden-star" style="top: 72%; left: 58%; animation-delay: 0.3s;"></div>
+                <svg class="constellation-lines" viewBox="0 0 100 100">
+                    <line x1="50" y1="20" x2="35" y2="40" />
+                    <line x1="50" y1="20" x2="65" y2="40" />
+                    <line x1="35" y1="40" x2="50" y2="55" />
+                    <line x1="65" y1="40" x2="50" y2="55" />
+                    <line x1="50" y1="55" x2="40" y2="75" />
+                    <line x1="50" y1="55" x2="60" y2="75" />
+                </svg>
+                <div class="orion-golden-star" style="top: 20%; left: 50%; animation-delay: 0s;"></div>
+                <div class="orion-golden-star" style="top: 40%; left: 35%; animation-delay: 0.4s;"></div>
+                <div class="orion-golden-star" style="top: 40%; left: 65%; animation-delay: 0.2s;"></div>
+                <div class="orion-golden-star" style="top: 55%; left: 50%; animation-delay: 0.6s;"></div>
+                <div class="orion-golden-star" style="top: 75%; left: 40%; animation-delay: 0.1s;"></div>
+                <div class="orion-golden-star" style="top: 75%; left: 60%; animation-delay: 0.3s;"></div>
             </div>
         </div>
 
-        <!-- COD TYpography CURAT, ALB ȘI MAT ÎN LIMBA ENGLEZĂ -->
+        <!-- TYPOGRAPHY CORECTATĂ: ALB MAT, MARE, LIZIBILĂ ÎN ENGLEZĂ -->
         <div class="orion-typography-section">
             <h1 class="orion-brand-title">Orion Trust</h1>
             <p class="orion-brand-subtitle">Financial Security<br>Digital Identification</p>
